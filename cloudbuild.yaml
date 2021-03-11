@@ -10,7 +10,7 @@ steps:
     args: ['build', '-t', 'deadl0ckk/cicd', '.']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'deadl0ckk/cicd']
-  - name: 'node'
+  - name: 'ubuntu'
     args: [ 'cd', 'jsproject']
   - name: 'node'
     args: ['npm', 'i', '&&', 'run', 'build']
