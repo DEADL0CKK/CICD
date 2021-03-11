@@ -13,8 +13,10 @@ steps:
 #   - name: 'ubuntu'
 #     args: ['bash','cd', 'jsproject']
   - name: 'node'
-    args: ['npm', 'i', '&&', 'run', 'build']
-  - name: 'npm'
+    args: ['npm', 'i']
+  - name: 'node'
+    args: ['npm', 'run', 'build']
+  - name: 'node'
     args: ['npm', 'run', 'test']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['login', '-u', 'deadl0ckk', '-p', '8f09be9e-477e-4cfd-ad9c-e80db98deb0f']
