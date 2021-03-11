@@ -14,13 +14,19 @@ steps:
 #     args: ['bash','cd', 'jsproject']
   - name: 'node'
     args: ['npm', 'i']
+    dir: 'jsproject'
   - name: 'node'
     args: ['npm', 'run', 'build']
+    dir: 'jsproject'
   - name: 'node'
     args: ['npm', 'run', 'test']
+    dir: 'jsproject'
   - name: 'gcr.io/cloud-builders/docker'
     args: ['login', '-u', 'deadl0ckk', '-p', '8f09be9e-477e-4cfd-ad9c-e80db98deb0f']
+    dir: 'jsproject'
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'deadl0ckk/cicd-node', '.']
+    dir: 'jsproject'
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'deadl0ckk/cicd-node']
+    dir: 'jsproject'
