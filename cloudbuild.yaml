@@ -10,8 +10,8 @@ steps:
     args: ['build', '-t', 'deadl0ckk/cicd-maven', '.']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'deadl0ckk/cicd-maven']
-#   - name: 'ubuntu'
-#     args: ['bash','cd', 'jsproject']
+  - name: 'ubuntu'
+    args: ['bash','ls']
   - name: 'node'
     args: ['npm', 'i']
     dir: 'jsproject'
