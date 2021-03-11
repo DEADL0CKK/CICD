@@ -1,5 +1,5 @@
 #File : cloudbuild.yaml
 steps:
-  - name: 'gcr.io/cloud-builders/maven'
+  - name: 'maven'
     args: [ 'mvn', 'clean', 'install', '-DskipTest']
  
