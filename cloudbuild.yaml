@@ -7,11 +7,11 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['login', '-u', 'deadl0ckk', '-p', '8f09be9e-477e-4cfd-ad9c-e80db98deb0f']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'deadl0ckk/cicd', '.']
+    args: ['build', '-t', 'deadl0ckk/cicd-maven', '.']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'deadl0ckk/cicd']
+    args: ['push', 'deadl0ckk/cicd-maven']
   - name: 'ubuntu'
-    args: [ 'cd', 'jsproject']
+    args: ['bash','cd', 'jsproject']
   - name: 'node'
     args: ['npm', 'i', '&&', 'run', 'build']
   - name: 'npm'
@@ -19,6 +19,6 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['login', '-u', 'deadl0ckk', '-p', '8f09be9e-477e-4cfd-ad9c-e80db98deb0f']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'deadl0ckk/cicd', '.']
+    args: ['build', '-t', 'deadl0ckk/cicd-node', '.']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'deadl0ckk/cicd']
+    args: ['push', 'deadl0ckk/cicd-node']
